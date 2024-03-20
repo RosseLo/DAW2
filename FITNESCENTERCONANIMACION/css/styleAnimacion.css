@@ -1,0 +1,142 @@
+/* Main Styling */
+html,
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2 {
+	font-family: 'Catamaran', sans-serif !important;
+}
+
+/* Bootstrap Styles */
+.bg-primary {
+	background: #ff6d2d !important;
+}
+
+.btn-info {
+	background: #fff;
+	border: 0;
+	color: #ff6d2d;
+}
+
+.btn-info:hover {
+	background: #000;
+	color: #fff;
+}
+
+.btn-primary {
+	
+	border: 0;
+}
+.btn-primary:hover {
+	background: #fff;
+	border: 0;
+	color: #ff6d2d;
+}
+
+.text-primary {
+	color: #ff6d2d !important;
+}
+
+h3{
+	color: #ff6d2d !important;
+}
+
+/* Utility Classes */
+.pt-6 {
+	padding-top: 120px;
+}
+
+.py-6 {
+	padding: 80px 0;
+}
+
+/* Header */
+.LQI-header {
+	background: url('/images/background.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.header .row {
+	--bs-gutter-x: 0;
+}
+
+/* Classes */
+.LQI-clases {
+	background: url('/images/background-secondary.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+	.pt-6 {
+		padding-top: 20px;
+	}
+
+	.classes .card-yoga {
+		padding: 10px !important;
+	}
+}
+
+/* animacion de rotacion para imagen de cabecera, sigue principio de ser perceptible y no causar distraccion*/
+#imagen-contenerdor {
+
+	transition: transform 0.5s;/* una transision suave con la propiedad transform */
+}
+
+
+#imagen-contenedor:hover {
+    transform: rotate(45deg);/*rotacion de 45 grados al asar el raton*/
+    cursor: pointer;
+}  
+
+/*pauta 2.1 teclado accesible y pauta 2.2 tiempo suficiente, animacion sutil al foco de los elementos de navegacion y botones*/
+/* hace un efecto "zoom" al dar clic o enfocarse la navegación y botones */
+.nav-link,
+.btn {
+	transition: transform 1s ease-in-out; /* mas duracion y efecto con mayor notoriedad */
+}
+
+.nav-link:focus,
+.btn:focus {
+
+	transform: scale(1.5);
+}
+
+/* Agrega estilos de transición de opacidad a los cards hacen que sean agradable visualmente y distingibles*/
+.card {
+	transition: opacity 0.4s ease-in-out;
+  }
+  
+  /* Cambia la opacidad al pasar el ratón */
+  .card:hover {
+	opacity: 0.7;/* al pasar el raton los card se desvaneceran suavemente */
+  }
+
+
+  /* Agrega la animación a la sección About */
+#LQI-about {
+    animation-name: fadeInLeft;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);/* Inicia desde la izquierda, fuera de la pantalla*/
+        width: 200%;
+        color: red;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);/* Termina en la posición original*/
+        width: 100%;
+        color: blue;
+    }
+}
